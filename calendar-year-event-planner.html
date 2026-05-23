@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender Rencana Event Setahun LITVENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandOrange: '#FF6000',
+                        brandYellow: '#FFC800',
+                        brandNavy: '#0A1128',
+                        brandWhite: '#FFFFFF',
+                        brandGray: 'E0DEDE',
+                        brandBlack: '#000000',
+                        brandTeal: '#008080',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .slide-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .bounce-element {
+            animation: bounce-slow 4s infinite ease-in-out;
+        }
+        .presentation-card {
+            min-height: 620px;
+        }
+        .progress-bar-fill {
+            transition: width 0.4s ease;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF6000;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#ffffff] via-brandWhite to-[#ffffff] text-slate-100 min-h-screen font-sans overflow-x-hidden">
+
+    <div class=" mx-auto px-4 py-4 flex flex-col justify-between min-h-screen">
+        <main class="flex-grow flex justify-center relative overflow-hidden rounded-3xl">
+
+            <section id="slide-1" class="w-full presentation-card bg-brandWhite/20 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-32 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                
+                <div class="flex-1 space-y-5 text-left relative z-10">
+                    <span class="inline-flex items-center space-x-1.5 bg-white border border-brandOrange/30 text-brandOrange px-3.5 py-1 rounded-full text-[14px] font-bold font-space uppercase tracking-wider">
+                        <i class="fa-solid fa-calendar-days animate-pulse mr-2"></i> Master Calendar LITVENT Mei 2026 - Mei 2027
+                    </span>
+                    <h1 class="text-3xl md:text-8xl font-extrabold font-jakarta leading-tight text-brandNavy">
+                        Rencana Kerja & <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandOrange to-brandYellow">Kalender Event</span> <br>
+                        Satu Tahun ke Depan!
+                    </h1>
+                    <p class="text-slate-500 text-sm md:text-lg max-w-4xl font-light leading-relaxed">
+                        Strategi eskalasi bertahap untuk membangun reputasi LITVENT dari organisasi rintisan baru hingga sukses mengeksekusi Festival Besar yang mendatangkan keuntungan finansial masif.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2 pt-1">
+                        <span class="bg-white/5 border border-white/10 text-slate-500 px-3 py-1 rounded-xl text-base font-space"><i class="fa-solid fa-chart-line text-brandOrange mr-1"></i> Bisnis & Komunitas Terintegrasi</span>
+                        <span class="bg-white/5 border border-white/10 text-slate-500 px-3 py-1 rounded-xl text-base font-space"><i class="fa-solid fa-bolt text-brandYellow mr-1"></i> Gen Z Cultured</span>
+                    </div>
+                </div>
+                
+                <div class="flex-1 flex justify-center items-center relative z-10 w-full max-w-2xl">
+                    <div class="relative w-full p-2">
+                        <svg class="w-full h-[30rem] mx-auto bounce-element" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="#FF6000" fill-opacity="0.1" stroke="#FF6000" stroke-width="2" stroke-dasharray="4 4"/>
+                            <circle cx="100" cy="75" r="28" fill="#FAD1A4"/>
+                            <path d="M72 70 C72 45 128 45 128 70 H72 Z" fill="#FF6000"/>
+                            <rect x="80" y="40" width="40" height="10" rx="5" fill="#FFC800"/>
+                            <rect x="85" y="68" width="12" height="8" rx="2" fill="#0A1128"/>
+                            <rect x="103" y="68" width="12" height="8" rx="2" fill="#0A1128"/>
+                            <line x1="97" y1="72" x2="103" y2="72" stroke="#0A1128" stroke-width="2"/>
+                            <path d="M94 88 Q100 95 106 88" stroke="#0A1128" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M65 140 C65 110 135 110 135 140 V160 H65 Z" fill="#152042" stroke="#FFC800" stroke-width="2"/>
+                            <path d="M125 110 L145 100 L145 125 L125 115 Z" fill="#FFC800"/>
+                            <path d="M120 112 L128 112 L128 122 L120 122 Z" fill="#FF6000"/>
+                            <polygon points="45,60 49,68 57,69 51,75 53,83 45,79 37,83 39,75 33,69 41,68" fill="#FFC800"/>
+                            <polygon points="155,50 158,55 163,56 159,60 160,65 155,62 150,65 151,60 147,56 152,55" fill="#FF6000"/>
+                        </svg>
+                        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-brandNavy border border-white/10 px-4 py-2 rounded-xl flex items-center gap-2 shadow-lg w-72 text-center">
+                            <span class="text-3xl">📅</span>
+                            <div class="text-left">
+                                <p class="text-[14px] uppercase tracking-wider text-slate-300">Target Output 1 Tahun</p>
+                                <p class="text-base font-bold text-white font-space">6 Event Sukses Terlaksana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-2" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="">
+                    <span class="text-brandNavy text-base font-space uppercase tracking-wider font-bold">#EscalationStrategy</span>
+                    <h2 class="text-2xl md:text-6xl mb-6 mt-16 font-extrabold text-brandNavy font-jakarta">Kurva Tangga Pertumbuhan LITVENT</h2>
+                    <p class="text-slate-500 text-xs md:text-lg mt max-w-4xl">Untuk meminimalkan risiko modal dan operasional, kita akan mengeksekusi konsep menggunakan strategi eskalasi bertahap: <strong>Crawl, Walk, Run, Fly!</strong></p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-24">
+                    <div class="bg-brandWhite/80 border border-brandOrange/20 p-4 rounded-2xl flex flex-col justify-between h-72 relative overflow-hidden group hover:border-brandOrange transition">
+                        <div class="absolute -top-6 -right-6 w-16 h-16 bg-brandOrange/20 rounded-full group-hover:bg-brandOrange/30 transition"></div>
+                        <div>
+                            <span class="text-4xl">🌱</span>
+                            <h3 class="font-bold text-brandOrange font-space text-5xl mt-4 mb-2">1. CRAWL (Q1)</h3>
+                            <p class="text-slate-400 text-[15px] mt-1 leading-relaxed">Fokus pada <strong>Micro-Event</strong> (Fandom Gathering). Modal minimal, risiko hampir 0, membangun portofolio awal tim.</p>
+                        </div>
+                        <span class="text-[14px] text-slate-500 font-mono font-bold">LEVEL: REPUTASI & SOP</span>
+                    </div>
+                    <div class="bg-brandWhite/80 border border-brandYellow/20 p-4 rounded-2xl flex flex-col justify-between h-72 relative overflow-hidden group hover:border-brandYellow transition">
+                        <div class="absolute -top-6 -right-6 w-16 h-16 bg-brandYellow/20 rounded-full group-hover:bg-brandYellow/30 transition"></div>
+                        <div>
+                            <span class="text-4xl">🚶</span>
+                            <h3 class="font-bold text-brandYellow font-space text-5xl mt-4 mb-2">2. WALK (Q2)</h3>
+                            <p class="text-slate-400 text-[15px] mt-1 leading-relaxed">Mulai menggarap <strong>Medium Event</strong> (Bazaar Kreatif & Kompetisi). Mulai monetisasi lewat sewa booth tenant UMKM.</p>
+                        </div>
+                        <span class="text-[14px] text-slate-500 font-mono font-bold">LEVEL: MONETISASI AWAL</span>
+                    </div>
+                    <div class="bg-brandWhite/80 border border-brandTeal/20 p-4 rounded-2xl flex flex-col justify-between h-72 relative overflow-hidden group hover:border-brandTeal transition">
+                        <div class="absolute -top-6 -right-6 w-16 h-16 bg-brandTeal/20 rounded-full group-hover:bg-brandTeal/30 transition"></div>
+                        <div>
+                            <span class="text-4xl">🏃</span>
+                            <h3 class="font-bold text-brandTeal font-space text-5xl mt-4 mb-2">3. RUN (Q3)</h3>
+                            <p class="text-slate-400 text-[15px] mt-1 leading-relaxed">Penyelenggaraan <strong>Mega-Event (LITVESTA)</strong>. Festival luar ruangan berskala besar. Target sponsor utama korporasi & B2C tiket massal.</p>
+                        </div>
+                        <span class="text-[14px] text-slate-500 font-mono font-bold">LEVEL: BRANDING NASIONAL</span>
+                    </div>
+                    <div class="bg-brandWhite/80 border border-emerald-500/20 p-4 rounded-2xl flex flex-col justify-between h-72 relative overflow-hidden group hover:border-emerald-500 transition">
+                        <div class="absolute -top-6 -right-6 w-16 h-16 bg-emerald-500/20 rounded-full group-hover:bg-emerald-500/30 transition"></div>
+                        <div>
+                            <span class="text-4xl">🦅</span>
+                            <h3 class="font-bold text-emerald-400 font-space text-5xl mt-4 mb-2">4. FLY (Q4)</h3>
+                            <p class="text-slate-400 text-[15px] mt-1 leading-relaxed">Fase <strong>Apresiasi & B2B Pitching</strong>. Mengunci kontrak sponsorship multi-tahun untuk agenda festival tahun berikutnya.</p>
+                        </div>
+                        <span class="text-[14px] text-slate-500 font-mono font-bold">LEVEL: SUSTAINABILITY</span>
+                    </div>
+                </div>
+
+                <div class="bg-brandOrange/10 border border-brandOrange/25 p-3 rounded-xl flex items-center space-x-3">
+                    <span class="text-lg">🎯</span>
+                    <p class="text-[13px] text-brandOrange"><strong>Disclaimer:</strong> "Jika kita langsung meloncat ke level RUN (Q3) tanpa melewati pondasi Q1-Q2, jika kita gagal, LITVENT akan langsung gulung tikar karena arus kas minus."</p>
+                </div>
+            </section>
+
+            <section id="slide-3" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="flex flex-col lg:flex-row gap-6 items-end">
+                    <div class="flex-1">
+                        <span class="bg-brandWhite text-brandOrange border z-10 border-brandOrange/30 text-[14px] font-bold font-space uppercase px-3 py-1 rounded-full">Kuartal 1 (Bulan 1 - 3): Fase Fondasi</span>
+                        <h2 class="text-2xl md:text-6xl mt-16 mb-6 font-extrabold font-jakarta text-brandNavy">Q1: Membangun Kredibilitas dari Mikro </h2>
+                        <p class="text-slate-500 text-xs md:text-lg max-w-4xl">
+                            Di tiga bulan pertama, kita fokus pada pelaksanaan 2 acara mikro. Tujuannya adalah merapikan kerja sama tim dan menghasilkan portofolio berupa konten foto/video berkualitas tinggi.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-8 h-56 max-w-7xl">
+                            <div class="bg-brandNavy p-3 rounded-xl border border-white/5 space-y-4">
+                                <span class="bg-brandOrange/10 text-brandOrange px-2 py-0.5 rounded text-[15px] font-space font-bold">PROGRAM 1</span>
+                                <h4 class="font-bold text-3xl text-white font-jakarta">LIT-Norebang Party 🎵</h4>
+                                <p class="text-slate-400 text-[15px]">Karaoke K-Pop bersama komunitas fandom di kafe lokal. Tiket masuk murah termasuk minuman ringan.</p>
+                            </div>
+                            <div class="bg-brandNavy p-3 rounded-xl border border-white/5 space-y-4 ">
+                                <span class="bg-brandYellow/10 text-brandYellow px-2 py-0.5 rounded text-[15px] font-space font-bold">PROGRAM 2</span>
+                                <h4 class="font-bold text-3xl text-white font-jakarta">Creative Circle Talk 💡</h4>
+                                <p class="text-slate-400 text-[15px]">Diskusi kasual/sharing bersama kreator konten atau ilustrator lokal untuk menarik pasar industri kreatif.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full lg:w-[500px] space-y-4">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10">
+                            <img class="object-cover h-[300px] w-full" 
+                                 alt="K-Pop Norebang Event Crowd" 
+                                 src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=500&q=80"
+                                 onerror="this.src='https://placehold.co/500x300/152042/FFFFFF?text=LIT-Norebang+Party'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-3">
+                                <p class="text-lg font-bold text-white">Target Q1: Pengunjung Kooperatif</p>
+                                <p class="text-[13px] text-slate-300">Hubungan akrab dengan 2 komunitas besar daerah.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brandNavy/80 p-3 rounded-xl flex justify-between items-center text-xs">
+                            <div class="space-y-4">
+                                <p class="text-slate-400 text-[14px]">Estimasi Anggaran Per-Event</p>
+                                <p class="font-bold text-brandOrange text-lg font-space">Rp 2.000.000 - Rp 4.000.000</p>
+                            </div>
+                            <span class="text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded font-bold text-[12px]">RISIKO: SANGAT RENDAH</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-4" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="flex flex-col lg:flex-row gap-6 items-end">
+                    <div class="flex-1">
+                        <span class="bg-brandWhite text-brandOrange border z-10 border-brandOrange/30 text-[14px] font-bold font-space uppercase px-3 py-1 rounded-full">Kuartal 2 (Bulan 4 - 6): Monetisasi Lanjutan</span>
+                        <h2 class="text-2xl md:text-6xl mt-16 mb-6 font-extrabold font-jakarta text-brandNavy">Q2: Mulai Cari Untung Lewat Kemitraan</h2>
+                        <p class="text-slate-500 text-xs md:text-lg max-w-4xl">
+                            Memasuki kuartal kedua, tim LITVENT sudah mulai solid. Saatnya meningkatkan skala acara menjadi tingkat menengah (kapasitas 250-500 pengunjung) untuk menghasilkan keuntungan dari biaya sewa stan UMKM & tiket B2C.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-8 h-56 max-w-7xl">
+                            <div class="bg-brandNavy p-3 rounded-xl border border-white/5 space-y-4">
+                                <span class="bg-brandOrange/10 text-brandOrange px-2 py-0.5 rounded text-[15px] font-space font-bold">PROGRAM 3</span>
+                                <h4 class="font-bold text-3xl text-white font-jakarta">LIT-Market: Creative Pop-Up 🛍️</h4>
+                                <p class="text-slate-400 text-[15px]">Bazaar kreatif mini yang menyediakan ruang pamer dan jualan bagi UMKM kuliner kekinian dan brand busana lokal.</p>
+                            </div>
+                            <div class="bg-brandNavy p-3 rounded-xl border border-white/5 space-y-4 ">
+                                <span class="bg-brandYellow/10 text-brandYellow px-2 py-0.5 rounded text-[15px] font-space font-bold">PROGRAM 4</span>
+                                <h4 class="font-bold text-3xl text-white font-jakarta">K-Cover Dance Arena 🏆</h4>
+                                <p class="text-slate-400 text-[15px]">Kompetisi tari cover lagu K-Pop berskala regional untuk menarik ribuan massa fans setia pendukung kontestan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full lg:w-[500px] space-y-4">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10">
+                            <img class="object-cover h-[300px] w-full" 
+                                 alt="K-Pop Norebang Event Crowd" 
+                                 src="https://images.unsplash.com/photo-1488901512066-cd403111aeb2?auto=format&fit=crop&w=500&q=80"
+                                 onerror="this.src='https://placehold.co/500x300/152042/FFFFFF?text=Creative+Bazaar+Event'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-3">
+                                <p class="text-lg font-bold text-white">Target Q2: Profit Bersih & Kemitraan</p>
+                                <p class="text-[13px] text-slate-300">Merangkul minimal 15 UMKM lokal berpotensi tinggi.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brandNavy/80 p-3 rounded-xl flex justify-between items-center text-xs">
+                            <div class="space-y-4">
+                                <p class="text-slate-400 text-[14px]">Estimasi Anggaran Per-Event</p>
+                                <p class="font-bold text-brandOrange text-lg font-space">Rp 12.000.000 - Rp 18.000.000</p>
+                            </div>
+                            <span class="text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded font-bold text-[12px]">RISIKO: MODERAT</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-5" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="flex flex-col lg:flex-row gap-6 items-end">
+                    <div class="flex-1">
+                        <span class="bg-brandWhite text-brandOrange border z-10 border-brandOrange/30 text-[14px] font-bold font-space uppercase px-3 py-1 rounded-full">Kuartal 3 (Bulan 7 - 9): Event Utama/Flagship</span>
+                        <h2 class="text-2xl md:text-6xl mt-16 mb-6 font-extrabold font-jakarta text-brandNavy">Q3: LITVESTA - Youth & Pop Culture Fest</h2>
+                        <p class="text-slate-500 text-xs md:text-lg max-w-4xl">
+                            Acara puncak terbesar di tahun pertama LITVENT. Sebuah festival hibrida luar ruangan (*outdoor*) yang menggabungkan seluruh ekosistem kita: Musik, Kompetisi Tari, Booth Kuliner UMKM, Kreator Konten, dan Area Eksibisi Foto.
+                        </p>
+                        
+                        <div class="space-y-3 bg-brandNavy p-4 rounded-xl border border-white/5 mt-8 h-56 max-w-7xl">
+                            <h4 class="font-bold text-4xl text-white font-space">Komponen Utama Festival LITVESTA ⚡</h4>
+                            <ul class="text-[16px] text-slate-400 space-y-2">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandOrange text-[9px]"></i> <strong>Main Stage:</strong> Mengundang Guest Star Nasional / K-Pop Influencer Terkenal.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandOrange text-[9px]"></i> <strong>Bazaar Area:</strong> Lebih dari 40 Booth Kuliner, Kerajinan Tangan, dan Merchandise Fandom.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandOrange text-[9px]"></i> <strong>Interactive Spot:</strong> Random Play Dance Area, Photo Box, & Wall of Fame Komunitas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full lg:w-[500px] space-y-4">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10">
+                            <img class="object-cover h-[300px] w-full" 
+                                 alt="Big Youth Festival Stage" 
+                                 src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80"
+                                 onerror="this.src='https://placehold.co/500x300/152042/FFFFFF?text=LITVESTA+Festival'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-3">
+                                <p class="text-lg font-bold text-white">Target Q3: Branding Skala Nasional</p>
+                                <p class="text-[13px] text-slate-300">Menyasar 1.500+ Pengunjung berbayar secara masif.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brandNavy/80 p-3 rounded-xl flex justify-between items-center text-xs">
+                            <div class="space-y-4">
+                                <p class="text-slate-400 text-[14px]">Estimasi Anggaran Festival</p>
+                                <p class="font-bold text-brandOrange text-lg font-space">Rp 75.000.000 - Rp 95.000.000</p>
+                            </div>
+                            <span class="text-red-400 bg-red-400/10 px-2 py-1 rounded font-bold text-[12px]">RISIKO: TINGGI</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-6" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="flex flex-col lg:flex-row gap-6 items-end">
+                    <div class="flex-1">
+                        <span class="bg-brandWhite text-brandOrange border z-10 border-brandOrange/30 text-[14px] font-bold font-space uppercase px-3 py-1 rounded-full">Kuartal 4 (Bulan 10 - 12): Kemitraan & Keberlanjutan</span>
+                        <h2 class="text-2xl md:text-6xl mt-16 mb-6 font-extrabold font-jakarta text-brandNavy">Q4: Evaluasi & Amankan Sponsor Tahun Depan</h2>
+                        <p class="text-slate-500 text-xs md:text-lg max-w-4xl">
+                            Setelah festival akbar di Q3 selesai dan berhasil mencatatkan statistik audiens yang memukau, tugas kita di Q4 adalah melakukan kapitalisasi portofolio untuk mengamankan kerja sama bisnis korporasi jangka panjang.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-8 h-56 max-w-7xl">
+                            <div class="bg-brandNavy p-3 rounded-xl border border-white/5 space-y-4">
+                                <span class="bg-brandOrange/10 text-brandOrange px-2 py-0.5 rounded text-[15px] font-space font-bold">Langkah 1</span>
+                                <h4 class="font-bold text-3xl text-white font-jakarta">LIT-Awards & Annual Gala 🏆</h4>
+                                <p class="text-slate-400 text-[15px]">Acara apresiasi tertutup/semi-terbuka bagi para talent, sponsor, dan partner komunitas lokal yang telah mendukung perjalanan setahun kita.</p>
+                            </div>
+                            <div class="bg-brandNavy p-3 rounded-xl border border-white/5 space-y-4">
+                                <span class="bg-brandYellow/10 text-brandYellow px-2 py-0.5 rounded text-[15px] font-space font-bold">Langkah 2</span>
+                                <h4 class="font-bold text-3xl text-white font-jakarta">B2B Sponsorship Pitching 🤝</h4>
+                                <p class="text-slate-400 text-[15px]">Membuat laporan tahunan (*Annual Report*) yang rapi lalu mengajukan proposal proposal sponsor terintegrasi bernilai tinggi kepada brand nasional untuk tahun depan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full lg:w-[500px] space-y-4">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10">
+                            <!-- High resolution Unsplash photo representing business meeting / signing contract -->
+                            <img class="object-cover h-[300px] w-full" 
+                                 alt="Business Pitch Meeting" 
+                                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=80"
+                                 onerror="this.src='https://placehold.co/500x300/152042/FFFFFF?text=B2B+Pitching'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-3">
+                                <p class="text-xs font-bold text-white">Target Q4: Keuangan Berkelanjutan</p>
+                                <p class="text-[13px] text-slate-300">Menyusun kontrak kesepahaman jangka panjang.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brandNavy/80 p-3 rounded-xl flex justify-between items-center text-xs">
+                            <div class="space-y-4">
+                                <p class="text-slate-400 text-[14px]">Estimasi Target Sponsor Baru</p>
+                                <p class="font-bold text-brandOrange text-lg font-space">Rp 50.000.000+ Terkunci</p>
+                            </div>
+                            <span class="text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded font-bold text-[12px]">RISIKO: RENDAH</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-7" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="">
+                    <span class="text-brandNavy text-base font-space uppercase tracking-wider font-bold">#MasterScheduler</span>
+                    <h2 class="text-2xl md:text-6xl mb-6 mt-16 font-extrabold text-brandNavy font-jakarta">Jadwal Kalender Bulanan Interaktif </h2>
+                    <p class="text-slate-500 text-xs md:text-lg mt max-w-4xl">Klik pada bulan di bawah ini untuk melihat daftar program dan aksi operasional yang harus dipersiapkan tim kita.</p>
+                </div>
+
+                <div class="grid grid-cols-3 md:grid-cols-6 gap-3 my-4 h-44">
+                    <button onclick="selectMonth(6)" id="btn-m-6" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 06 (Jun)</button>
+                    
+                    <button onclick="selectMonth(7)" id="btn-m-7" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 07 (Jul)</button>
+                    <button onclick="selectMonth(8)" id="btn-m-8" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 09 (Ags)</button>
+                    <button onclick="selectMonth(9)" id="btn-m-9" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 09 (Sep)</button>
+                    <button onclick="selectMonth(10)" id="btn-m-10" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 10 (Okt)</button>
+                    <button onclick="selectMonth(11)" id="btn-m-11" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 11 (Nov)</button>
+                    <button onclick="selectMonth(12)" id="btn-m-12" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 12 (Des)</button>
+                    <button onclick="selectMonth(1)" id="btn-m-1" class="bg-brandOrange border-2 border-brandOrange text-brandNavy font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 01 (Jan)</button>
+                    <button onclick="selectMonth(2)" id="btn-m-2" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 02 (Feb)</button>
+                    <button onclick="selectMonth(3)" id="btn-m-3" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 03 (Mar)</button>
+                    <button onclick="selectMonth(4)" id="btn-m-4" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 04 (Apr)</button>
+                    <button onclick="selectMonth(5)" id="btn-m-5" class="bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all">Bulan 05 (Mei)</button>
+                </div>
+
+                <div id="monthly-detail-box" class="bg-brandNavy/90 border border-brandOrange/20 p-4 rounded-2xl min-h-[140px] flex items-start gap-4 transition-all">
+                    <div class="bg-brandOrange/10 text-brandOrange p-3 rounded-xl text-2xl" id="month-icon">
+                        <i class="fa-solid fa-flag"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-white font-space text-xl" id="month-title">Bulan 01 (Januari): Fase Pendirian Hukum & SOP Internal</h4>
+                        <p class="text-base text-slate-400" id="month-desc">Fokus kita di bulan pertama adalah melengkapi berkas legalitas hukum/SOP dasar antar divisi, mempersiapkan proposal dasar penawaran venue gratis, serta mendesain template rancangan Event Briefing Sheet.</p>
+                        <div class="flex flex-wrap gap-2 pt-1 text-[13px]" id="month-badges">
+                            <span class="bg-white/5 border border-white/10 text-slate-300 px-2 py-0.5 rounded">SOP Organisasi</span>
+                            <span class="bg-white/5 border border-white/10 text-slate-300 px-2 py-0.5 rounded">Riset Kafe Partner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-[14px] text-brandYellow">
+                    💡 Klik bulan-bulan di atas untuk memamerkan detail rencana operasional bulanan kepada rekan kerja Anda.
+                </div>
+            </section>
+
+            <!-- ================= SLIDE 8: INTERACTIVE BUDGET SIMULATOR (FINANCIAL FEASIBILITY) ================= -->
+            <section id="slide-8" class="w-full presentation-card bg-brandNavyLight/40 backdrop-blur-md rounded-3xl border border-white/10 p-6 md:p-10 flex flex-col justify-between hidden shadow-2xl relative">
+                <div class="absolute -top-32 -z-10 -left-32 w-80 h-80 bg-brandOrange rounded-full filter blur-[120px]"></div>
+                <div class="absolute -bottom-32 -z-10 -right-32 w-80 h-80 bg-brandYellow rounded-full filter blur-[120px]"></div>
+                <div class="">
+                    <span class="text-brandNavy text-base font-space uppercase tracking-wider font-bold">#FinancePlannerSimulator</span>
+                    <h2 class="text-2xl md:text-6xl mb-6 mt-16 font-extrabold text-brandNavy font-jakarta">Simulator Proyeksi Keuangan Event 💰</h2>
+                    <p class="text-slate-500 text-xs md:text-lg mt max-w-4xl">Ajak rekan kerja Anda menghitung langsung kelayakan profitabilitas acara di bawah ini. Atur nilai slider sesuai target realistis!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-4 bg-brandNavy/90 p-5 rounded-2xl border border-white/5 h-80">
+                    <!-- Left Column: Inputs -->
+                    <div class="space-y-4 md:col-span-2">
+                        <!-- Select Event Type -->
+                        <div class="space-y-1">
+                            <label class="text-lg font-bold font-space text-slate-300">1. Pilih Skala Acara:</label>
+                            <select id="sim-event-type" onchange="calculateSimulation()" class="w-full bg-brandNavyLight border border-white/10 p-2 rounded-xl text-xs text-brandNavy focus:outline-none focus:border-brandOrange">
+                                <option value="micro">Micro-Event (K-Norebang Party - Target 100 Tiket)</option>
+                                <option value="medium">Medium Event (K-Dance Arena - Target 400 Tiket)</option>
+                                <option value="mega">Mega-Event (Festival LITVESTA - Target 1.500 Tiket)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Inputs Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Input 1: Harga Tiket -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-lg font-bold font-space">
+                                    <span class="text-slate-300">2. Harga Tiket Masuk:</span>
+                                    <span class="text-brandOrange" id="ticket-price-display">Rp 35.000</span>
+                                </div>
+                                <input type="range" id="sim-ticket-price" min="15000" max="150000" step="5000" value="35000" oninput="calculateSimulation()" class="w-full h-1.5 bg-white/15 rounded-lg appearance-none cursor-pointer accent-brandOrange">
+                            </div>
+
+                            <!-- Input 2: Sponsor Deal -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-lg font-bold font-space">
+                                    <span class="text-slate-300">3. Pendapatan Sponsor:</span>
+                                    <span class="text-brandYellow" id="sponsor-price-display">Rp 1.500.000</span>
+                                </div>
+                                <input type="range" id="sim-sponsor" min="0" max="50000000" step="500000" value="150000" oninput="calculateSimulation()" class="w-full h-1.5 bg-white/15 rounded-lg appearance-none cursor-pointer accent-brandYellow">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Results Dashboard -->
+                    <div class="bg-brandNavyLight p-4 rounded-xl border border-white/10 flex flex-col justify-between space-y-3">
+                        <div class="text-center border-b border-white/10 pb-2">
+                            <h4 class="text-slate-400 text-[15px] uppercase font-space">Status Kelayakan Acara</h4>
+                            <span id="feasibility-badge" class="mt-1 inline-block bg-emerald-500/10 text-emerald-400 font-bold font-space text-[13px] px-2.5 py-1 rounded">SANGAT SEHAT ✅</span>
+                        </div>
+                        
+                        <!-- Financial Figures -->
+                        <div class="space-y-2 text-lg">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Total Pendapatan:</span>
+                                <span class="font-bold font-space text-white" id="total-revenue">Rp 5.000.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Total Pengeluaran:</span>
+                                <span class="font-bold font-space text-red-400" id="total-cost">Rp 3.000.000</span>
+                            </div>
+                            <div class="flex justify-between border-t border-white/5 pt-2">
+                                <span class="font-bold text-slate-300">Proyeksi Laba Bersih:</span>
+                                <span class="font-extrabold font-space text-brandOrange text-lg" id="total-profit">Rp 2.000.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Disclaimer -->
+                <p class="text-[10px] text-slate-500 text-center italic">Angka di atas dihitung secara algoritma berdasarkan biaya dasar sewa alat, akomodasi talent, biaya tak terduga, dan perizinan realistis.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
+
+        function showSlide(index) {
+            if (index < 1 || index > totalSlides) return;
+            
+            // Sembunyikan semua slide
+            for (let i = 1; i <= totalSlides; i++) {
+                const el = document.getElementById(`slide-${i}`);
+                if (el) el.classList.add('hidden');
+            }
+            
+            // Tampilkan slide terpilih
+            const activeEl = document.getElementById(`slide-${index}`);
+            if (activeEl) {
+                activeEl.classList.remove('hidden');
+            }
+            
+            currentSlide = index;
+            
+            // Perbarui counter slide di header
+            document.getElementById('slide-number').innerText = `Slide ${currentSlide} / ${totalSlides}`;
+            
+            // Perbarui indikator progress bar
+            const percent = (currentSlide / totalSlides) * 100;
+            document.getElementById('slide-progress').style.width = `${percent}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                showSlide(currentSlide + 1);
+            } else {
+                showSlide(1); // Balik ke slide pertama
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                showSlide(currentSlide - 1);
+            } else {
+                showSlide(totalSlides); // Balik ke slide terakhir
+            }
+        }
+
+        // Keyboard arrow key navigation support
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                event.preventDefault();
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Swipe gestures support for mobile devices
+        let touchstartX = 0;
+        let touchendX = 0;
+        
+        document.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            handleGesture();
+        });
+
+        function handleGesture() {
+            if (touchendX < touchstartX - 50) {
+                nextSlide(); // Geser ke kiri -> Slide selanjutnya
+            }
+            if (touchendX > touchstartX + 50) {
+                prevSlide(); // Geser ke kanan -> Slide sebelumnya
+            }
+        }
+
+        // Fullscreen toggle logic
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        const monthsData = {
+            6: {
+                title: "Bulan 06 (Juni): Fase Pendirian Hukum & SOP Internal",
+                desc: "Fokus utama di awal tahun adalah mengurus legalitas formal LITVENT, merumuskan kontrak kerja sama tim internal, serta mendesain formulir survei lokasi partner kafe perdana kita.",
+                icon: "fa-solid fa-folder-open",
+                badges: ["Aman Legalitas", "Desain SOP", "Riset Lokasi Kafe"]
+            },
+            7: {
+                title: "Bulan 07 (Juli): Promosi Digital & Penjaringan Mitra",
+                desc: "Membuat akun media sosial resmi LITVENT secara profesional, merekrut komite relawan perdana kita (LIT-Champs), serta mulai melakukan pendekatan ke kafe partner terdekat.",
+                icon: "fa-solid fa-comments",
+                badges: ["Branding Media Sosial", "Rekrutmen Relawan", "Pendekatan Mitra"]
+            },
+            8: {
+                title: "Bulan 08 (Agustus): Eksekusi Pilot Project Perdana - Norebang Party",
+                desc: "Pelaksanaan event mikro pertama kita. Menguji kesolidan panitia pelaksana, mendata 100 pengunjung, dan meluncurkan video profil kompilasi pertama di media sosial.",
+                icon: "fa-solid fa-microphone-lines",
+                badges: ["Norebang Gathering", "Konten Video Perdana", "Uji Coba Tim"]
+            },
+            9: {
+                title: "Bulan 09 (September): Creative Talk & Kurasi Komunitas Kreatif",
+                desc: "Menggelar talkshow bersama seniman & kreator lokal untuk meluaskan jaringan bisnis ke luar sekadar fans budaya Korea, sekaligus mengidentifikasi calon tenant prospektif.",
+                icon: "fa-solid fa-users",
+                badges: ["Talkshow Kreatif", "Kurasi Partner", "Evaluasi Portofolio"]
+            },
+            10: {
+                title: "Bulan 10 (Oktober): Prapembuatan Lini Masa Event Bazaar Q2",
+                desc: "Menyusun draf proposal penawaran stan bazar (LIT-Market). Mulai memanggil tenant kuliner, menyiapkan layout tempat sewa, dan meluncurkan penjualan tiket pre-sale.",
+                icon: "fa-solid fa-store",
+                badges: ["Penyusunan Proposal", "Kurasi Tenant UMKM", "Pre-Sale Tiket"]
+            },
+            11: {
+                title: "Bulan 11 (November): Pelaksanaan Kompetisi Tari Regional & Bazaar",
+                desc: "Eksekusi event tingkat menengah (Medium Event). Ditargetkan mendatangkan 450 pengunjung, 15+ tenant bazaar UMKM aktif, serta mendatangkan laba bersih awal tim.",
+                icon: "fa-solid fa-trophy",
+                badges: ["Kompetisi K-Cover", "LIT-Market Bazaar", "Arus Kas Masuk"]
+            },
+            12: {
+                title: "Bulan 12 (Desember): Rencana Teknis & Proposal Sponsor LITVESTA",
+                desc: "Mulai fokus ke Mega-Event Q3. Merumuskan struktur anggaran final untuk LITVESTA, menandatangani kontrak awal pengisi acara nasional, dan mencetak berkas proposal sponsor utama.",
+                icon: "fa-solid fa-file-invoice",
+                badges: ["Rencana Festival", "Tanda Tangan Pengisi Acara", "Pitching Sponsor"]
+            },
+            1: {
+                title: "Bulan 01 (Januari): Kampanye Promosi Massal & Amankan Logistik",
+                desc: "H-30 pelaksanaan festival. Kampanye gila-gilaan di media sosial, kerja sama dengan media patner lokal, penutupan batas sewa stan makanan, dan pelunasan sewa sound panggung.",
+                icon: "fa-solid fa-bullhorn",
+                badges: ["Publikasi Massal", "Amankan Logistik", "Sewa Alat Panggung"]
+            },
+            2: {
+                title: "Bulan 02 (Februari): Eksekusi Festival LITVESTA 2026",
+                desc: "Hari H acara terbesar LITVENT tahun ini. Festival luar ruangan akbar. Seluruh panitia bekerja berdasarkan Rundown & Cue Sheet terkomando. Membawa omset jutaan rupiah.",
+                icon: "fa-solid fa-calendar-check",
+                badges: ["LITVESTA Festival", "Konser & Musik", "Laba Maksimal"]
+            },
+            3: {
+                title: "Bulan 03 (Maret): Evaluasi Total & Rilis Laporan Pasca-Acara",
+                desc: "Menyusun Laporan Pertanggungjawaban (LPJ) yang rapi bagi para sponsor. Mengadakan rapat evaluasi kegagalan operasional & mengarsip file dokumentasi festival.",
+                icon: "fa-solid fa-circle-exclamation",
+                badges: ["Penyusunan LPJ", "Arsip Dokumentasi", "Rapat Evaluasi"]
+            },
+            4: {
+                title: "Bulan 04 (April): Penyelenggaraan LIT-Awards & Gala Apresiasi",
+                desc: "Mengadakan acara makan malam khusus tertutup untuk menghargai usaha panitia internal, serta memberikan penghargaan bagi komunitas & talent terbaik tahun ini.",
+                icon: "fa-solid fa-hands-clapping",
+                badges: ["LIT-Awards Gala", "Apresiasi Komunitas", "Apresiasi Tim"]
+            },
+            5: {
+                title: "Bulan 05 (Mei): Pembuatan Proposal B2B Kemitraan Tahun Depan",
+                desc: "Mengunci data performa (statistik jangkauan media sosial & total penonton setahun), menyusun draf master kalender tahun kedua, serta mendatangi kembali sponsor utama.",
+                icon: "fa-solid fa-handshake",
+                badges: ["Laporan Tahunan", "Rencana Tahun Kedua", "Sponsorship Terkunci"]
+            },
+        };
+
+        function selectMonth(monthNum) {
+            for (let i = 1; i <= 12; i++) {
+                const btn = document.getElementById(`btn-m-${i}`);
+                if (btn) {
+                    btn.className = "bg-brandNavy border border-white/10 hover:border-brandOrange text-slate-300 font-bold py-2 rounded-xl text-lg font-space transition-all";
+                }
+            }
+
+            const activeBtn = document.getElementById(`btn-m-${monthNum}`);
+            if (activeBtn) {
+                activeBtn.className = "bg-brandOrange border-2 border-brandOrange text-brandNavy font-bold py-2 rounded-xl text-lg font-space transition-all";
+            }
+
+            const data = monthsData[monthNum];
+            document.getElementById('month-icon').innerHTML = `<i class="${data.icon}"></i>`;
+            document.getElementById('month-title').innerText = data.title;
+            document.getElementById('month-desc').innerText = data.desc;
+
+            let badgesHtml = '';
+            data.badges.forEach(b => {
+                badgesHtml += `<span class="bg-white/5 border border-white/10 text-slate-300 px-2 py-0.5 rounded">${b}</span>`;
+            });
+            document.getElementById('month-badges').innerHTML = badgesHtml;
+        }
+
+        function calculateSimulation() {
+            const eventType = document.getElementById('sim-event-type').value;
+            const ticketPriceInput = parseInt(document.getElementById('sim-ticket-price').value);
+            const sponsorInput = parseInt(document.getElementById('sim-sponsor').value);
+
+            document.getElementById('ticket-price-display').innerText = `Rp ${ticketPriceInput.toLocaleString('id-ID')}`;
+            document.getElementById('sponsor-price-display').innerText = `Rp ${sponsorInput.toLocaleString('id-ID')}`;
+
+            let ticketVolume = 100;
+            let fixedCosts = 3000000; 
+
+            if (eventType === 'micro') {
+                ticketVolume = 100;
+                fixedCosts = 2500000;
+            } else if (eventType === 'medium') {
+                ticketVolume = 450;
+                fixedCosts = 14000000;
+            } else if (eventType === 'mega') {
+                ticketVolume = 1500;
+                fixedCosts = 75000000;
+            }
+
+            // Hitung Keuangan
+            const totalRevenue = (ticketPriceInput * ticketVolume) + sponsorInput;
+            const totalCost = fixedCosts;
+            const profit = totalRevenue - totalCost;
+
+            // Update UI figures
+            document.getElementById('total-revenue').innerText = `Rp ${totalRevenue.toLocaleString('id-ID')}`;
+            document.getElementById('total-cost').innerText = `Rp ${totalCost.toLocaleString('id-ID')}`;
+            
+            const profitEl = document.getElementById('total-profit');
+            if (profit >= 0) {
+                profitEl.innerText = `Rp ${profit.toLocaleString('id-ID')}`;
+                profitEl.className = "font-extrabold font-space text-emerald-400 text-sm";
+            } else {
+                profitEl.innerText = `- Rp ${Math.abs(profit).toLocaleString('id-ID')}`;
+                profitEl.className = "font-extrabold font-space text-red-500 text-sm";
+            }
+
+            // Update status kelayakan badge
+            const badge = document.getElementById('feasibility-badge');
+            if (profit > (totalCost * 0.4)) { // Untung lebih dari 40% dari cost
+                badge.innerText = "SANGAT SEHAT ✅";
+                badge.className = "mt-1 inline-block bg-emerald-500/10 text-emerald-400 font-bold font-space text-[10px] px-2.5 py-1 rounded";
+            } else if (profit >= 0) {
+                badge.innerText = "RISIKO MODERAT ⚠️";
+                badge.className = "mt-1 inline-block bg-amber-500/10 text-amber-400 font-bold font-space text-[10px] px-2.5 py-1 rounded";
+            } else {
+                badge.innerText = "RUGI / BAHAYA 🚨";
+                badge.className = "mt-1 inline-block bg-rose-500/10 text-rose-500 font-bold font-space text-[10px] px-2.5 py-1 rounded";
+            }
+        }
+
+        // Initialize state on load
+        window.onload = function() {
+            showSlide(1);
+            calculateSimulation();
+        }
+    </script>
+</body>
+</html>
